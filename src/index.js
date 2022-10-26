@@ -5,6 +5,16 @@ const cards = [
     backFile: 'svg',
   },
   { name: 'animal', frotFile: 'svg', backFile: 'png' },
+  {
+    name: 'fruit',
+    frotFile: 'png',
+    backFile: 'png',
+  },
+  {
+    name: 'transportation',
+    frotFile: 'svg',
+    backFile: 'svg',
+  },
 ];
 const difficulty = [8, 16, 32];
 const cardIndex = [];
@@ -155,19 +165,25 @@ function isGetScoreHandler(type) {
 
 function isEndGameHandler(type = 'user') {
   setTimeout(() => {
-    let textWords =
-      score.user === score.computer
-        ? '平手'
-        : score.user > score.computer
-        ? '玩家獲勝'
-        : '電腦獲勝';
+    let text = '';
+    let icon = 'success';
+    let title = '恭喜';
+    if (score.user === score.computer) {
+      text = '平手';
+    } else if (score.user > score.computer) {
+      text = '玩家獲勝';
+    } else {
+      text = '電腦獲勝';
+      icon = 'warning';
+      title = '遊戲結束';
+    }
 
     $('.card:not(.card-close)').addClass('card-close');
     if ($('.card-ok').length === $('.card').length) {
       Swal.fire({
-        icon: 'success',
-        title: '恭喜',
-        text: textWords,
+        icon,
+        title,
+        text,
       }).then(() => {
         $('.choose-container').css('display', 'block');
         $('.container').css('background-image', '');
