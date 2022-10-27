@@ -11,7 +11,7 @@
     <div class="container">
       <div class="choose-container">
         <form class="choose-form">
-          <div>
+          <div class="choose-card">
             <input
               type="radio"
               name="card"
@@ -20,7 +20,7 @@
               checked
               class="choose-radio"
             />
-            <label for="card1" class="choose-label">
+            <label for="card1" class="choose-label-card">
               <img src="./src/img/chess-1.png" alt="chess" class="choose-img" />
             </label>
             <input
@@ -30,7 +30,7 @@
               id="card2"
               class="choose-radio"
             />
-            <label for="card2" class="choose-label">
+            <label for="card2" class="choose-label-card">
               <img
                 src="./src/img/animal-2.svg"
                 alt="animal"
@@ -44,7 +44,7 @@
               id="card3"
               class="choose-radio"
             />
-            <label for="card3" class="choose-label">
+            <label for="card3" class="choose-label-card">
               <img src="./src/img/fruit-1.png" alt="fruit" class="choose-img" />
             </label>
             <input
@@ -54,11 +54,43 @@
               id="card4"
               class="choose-radio"
             />
-            <label for="card4" class="choose-label">
+            <label for="card4" class="choose-label-card">
               <img
                 src="./src/img/transportation-3.svg"
                 alt="transportation"
                 class="choose-img"
+              />
+            </label>
+            <input
+              type="radio"
+              name="card"
+              value="4"
+              id="card5"
+              class="choose-radio"
+            />
+            <label
+              for="card5"
+              class="choose-label-card choose-label-card-small"
+            >
+              <img
+                src="./src/img/chess-1.png"
+                alt="chess"
+                class="choose-img-small"
+              />
+              <img
+                src="./src/img/animal-2.svg"
+                alt="animal"
+                class="choose-img-small"
+              />
+              <img
+                src="./src/img/fruit-1.png"
+                alt="fruit"
+                class="choose-img-small"
+              />
+              <img
+                src="./src/img/transportation-3.svg"
+                alt="transportation"
+                class="choose-img-small"
               />
             </label>
           </div>
@@ -70,7 +102,7 @@
               id="easy"
               class="choose-radio"
             />
-            <label for="easy" class="choose-label">簡單</label>
+            <label for="easy" class="choose-label-difficulty">簡單</label>
             <input
               type="radio"
               name="difficulty"
@@ -79,7 +111,7 @@
               checked
               class="choose-radio"
             />
-            <label for="medium" class="choose-label">中等</label>
+            <label for="medium" class="choose-label-difficulty">中等</label>
             <input
               type="radio"
               name="difficulty"
@@ -87,7 +119,7 @@
               id="hard"
               class="choose-radio"
             />
-            <label for="hard" class="choose-label">困難</label>
+            <label for="hard" class="choose-label-difficulty">困難</label>
           </div>
           <button type="submit" class="btn">確定</button>
         </form>

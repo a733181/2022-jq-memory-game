@@ -37,13 +37,41 @@ h2 {
   width: 100vw;
   overflow: hidden;
 }
+
 .choose-form {
   display: flex;
   flex-direction: column;
   gap: 30px;
   text-align: center;
 }
-.choose-label {
+
+.choose-card {
+  display: flex;
+  gap: 20px;
+}
+
+.choose-label-card {
+  position: relative;
+}
+
+.choose-label-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 96px;
+  height: 20px;
+  box-shadow: 2px 2px 5px rgb(0, 0, 0, 0.3);
+  z-index: -1;
+}
+
+.choose-label-card-small {
+  width: 96px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.choose-label-difficulty {
   padding: 5px 6px;
   box-shadow: 2px 2px 5px rgb(0, 0, 0, 0.3);
   font-size: 20px;
@@ -53,12 +81,22 @@ h2 {
   margin-right: 15px;
 }
 
-.choose-radio:checked + .choose-label {
+.choose-radio:checked + .choose-label-card:before {
   background-color: #eee;
 }
+
+.choose-radio:checked + .choose-label-difficulty {
+  background-color: #eee;
+}
+
 .choose-img {
   width: 96px;
   height: 96px;
+}
+
+.choose-img-small {
+  width: 48px;
+  height: 48px;
 }
 
 .btn {
@@ -71,7 +109,8 @@ h2 {
 }
 
 .btn:hover {
-  background-color: #eee;
+  background-color: cadetblue;
+  color: white;
 }
 
 .btn:active {

@@ -27,8 +27,16 @@ const score = {
 $('.choose-form').on('submit', function (e) {
   e.preventDefault();
   const formData = new FormData(e.target);
-  user.card = +Object.fromEntries(formData).card;
-  user.difficulty = difficulty[+Object.fromEntries(formData).difficulty];
+  const inputCard = +Object.fromEntries(formData).card;
+  const inputDifficulty = +Object.fromEntries(formData).difficulty;
+
+  if (inputCard > cards.length - 1) {
+    user.card = Math.round(Math.random() * (cards.length - 1));
+  } else {
+    user.card = inputCard;
+  }
+
+  user.difficulty = difficulty[inputDifficulty];
   $('.container').css(
     'background-image',
     `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
